@@ -1,6 +1,7 @@
-testextension
+fileupload
 =============
-test extension
+Yii2 extension for uploading files to the site.
+Upload widget for form. Chunking files to small parts (for upload big files with small POST size).
 
 Installation
 ------------

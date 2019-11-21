@@ -8,7 +8,7 @@ class FileUploadAsset extends AssetBundle
 {
     //public $basePath = '@webroot';
     //public $baseUrl = '@web';
-    public $sourcePath = '@vendor/mrlinqu/fileupload/src/assets';
+    public $sourcePath = '@vendor/mrlinqu/yii2-fileupload/src/assets';
     public $css = [
         'fileUpload.css',
     ];
