@@ -1,0 +1,25 @@
+.fileUpload-dropzone {
+    border: 2px dashed #bbb;
+    border-radius: 5px;
+    padding: 25px;
+    color: #bbb;
+    min-width: 329px;
+}
+.fileUpload-text {}
+.fileUpload-file {}
+.fileUpload-image {
+    width: 239px !important;
+    height: 239px !important;
+    background-image: url('loading.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.fileUpload-image.error {
+    background-image: url('error.jpg');
+}
+.fileUpload-progress {
+    height: 1px;
+}
+.fileUpload-progress-bar {}
+.fileUpload-size {}
+.fileUpload-date {}
