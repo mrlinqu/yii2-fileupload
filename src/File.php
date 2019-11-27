@@ -41,7 +41,7 @@ class File extends \yii\base\BaseObject
     {
         $path_parts = pathinfo($this->fullFilename);
         if (!in_array($path_parts['extension'], ['jpg', 'png'])) {
-            $assetsUrl = \Yii::$app->assetManager->getPublishedUrl('@vendor/mrlinqu/fileupload/src/assets');
+            $assetsUrl = \Yii::$app->assetManager->getPublishedUrl('@vendor/mrlinqu/yii2-fileupload/src/assets');
             return $assetsUrl . '/file.png';
         }
 
@@ -56,6 +56,15 @@ class File extends \yii\base\BaseObject
         fpassthru($fp);
         fclose($fp);
 
+        /*$response = \Yii::$app->getResponse();
+        $response->format = \yii\web\Response::FORMAT_RAW;
+        $response->getHeaders()
+            ->set('Expires', gmdate('D, d M Y H:i:s \G\M\T', time() + (7*24*60*60)))
+            ->set('Cache-Control', 'public, max-age=604800')
+            ->set('Content-Transfer-Encoding', 'binary')
+            ->set('Content-type', 'image/'.$format);
+        $response->data = file_get_contents($this->fullFilename . '.thumb');*/
+
         return null;
     }
 
@@ -63,7 +72,7 @@ class File extends \yii\base\BaseObject
     {
         $path_parts = pathinfo($this->fullFilename);
         if (!in_array($path_parts['extension'], ['jpg', 'png'])) {
-            $assetsUrl = \Yii::$app->assetManager->getPublishedUrl('@vendor/mrlinqu/fileupload/src/assets');
+            $assetsUrl = \Yii::$app->assetManager->getPublishedUrl('@vendor/mrlinqu/yii2-fileupload/src/assets');
             return $assetsUrl . '/file.png';
         }
 

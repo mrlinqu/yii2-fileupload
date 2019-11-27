@@ -23,6 +23,10 @@ class MainController extends Controller
         }
 
         if ($f = $model->upload()){
+            if ($this->module->onUpload && is_callable($this->module->onUpload)) {
+                $func = $this->module->onUpload;
+                call_user_func($func, $f->filename);
+            }
             return $f->getInfo();
         }
 

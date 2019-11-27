@@ -14,6 +14,8 @@ class Bootstrap implements BootstrapInterface
             'fileuploads/<action>' => 'fileupload/main/<action>',
         ], false);
 
-        $app->setModule('fileupload', 'mrlinqu\fileupload\Module');
+        if (!$app->hasModule('fileupload')) {
+            $app->setModule('fileupload', 'mrlinqu\fileupload\Module');
+        }
     }
 }
